@@ -1,5 +1,5 @@
 {
-  "name": "google-api",
+  "name": "doctors-list",
   "description": "",
   "main": "gulpfile.js",
   "license": "ISC",
@@ -15,5 +15,5 @@
     "bootstrap": "^3.3.7",
     "moment": "^2.18.1",
     "jquery": "^3.2.1"
-  }  
+  }
 }

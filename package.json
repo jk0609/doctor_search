@@ -1,5 +1,5 @@
 {
-  "name": "google-api",
+  "name": "doctors-list",
   "version": "1.0.0",
   "main": "gulpfile.js",
   "dependencies": {
@@ -27,13 +27,5 @@
   },
   "author": "",
   "license": "ISC",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Aaron3831/google-api.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Aaron3831/google-api/issues"
-  },
-  "homepage": "https://github.com/Aaron3831/google-api#readme",
   "description": ""
 }

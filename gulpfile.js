@@ -23,6 +23,10 @@ var browserSync = require('browser-sync').create();
 
 var buildProduction = utilities.env.production;
 
+gulp.task("clean", function(){
+  return del(['build', 'tmp']);
+});
+
 gulp.task('jsBrowserify', ['concatInterface'], function() {
   return browserify({ entries: ['./tmp/allConcat.js'] })
     .bundle()
@@ -56,10 +60,6 @@ gulp.task("build", function(){
   } else {
     gulp.start('jsBrowserify');
   }
-});
-
-gulp.task("clean", function(){
-  return del(['build', 'tmp']);
 });
 
 gulp.task('jshint', function(){
