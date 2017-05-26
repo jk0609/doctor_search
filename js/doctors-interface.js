@@ -1,7 +1,16 @@
 var apiKey = require('./../.env').apiKey;
 var getDoctors = require('./../js/doctors.js').getDoctors;
+var getSpecialties = require('./../js/doctors.js').getSpecialties;
 
-//query, first, last, location/range, specialty, key
+var showSpecialties = function(result){
+  var nameArr = [];
+  result.data.forEach(function(spec){
+    nameArr.push([spec.name,spec.uid]);
+  })
+  nameArr.sort().forEach(function(spec){
+    $('#specialties').append('<option value='+spec[1]+'>'+spec[0]+'</option>')
+  })
+};
 
 var displayDoctors = function(result){
   result.data.forEach(function(doctor){
@@ -11,6 +20,12 @@ var displayDoctors = function(result){
 };
 
 $(document).ready(function(){
+  getSpecialties(showSpecialties);
+
+  $('.formDivButton').click(function(){
+    $('.searchParam').hide();
+    $('.'+this['value']).show();
+  })
 
   $('form').submit(function(e){
     e.preventDefault();
